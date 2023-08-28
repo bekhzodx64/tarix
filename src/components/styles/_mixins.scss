@@ -1,0 +1,34 @@
+@mixin truncate($count) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: $count;
+	-webkit-box-orient: vertical;
+}
+
+@mixin breakpoint($breakpoint, $direction: min) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$breakpoint-values: map-get($breakpoints, $breakpoint);
+		$breakpoint-min: map-get($breakpoint-values, min);
+		$breakpoint-max: map-get($breakpoint-values, max);
+
+		@if $direction == min {
+			@media (min-width: $breakpoint-min) {
+				@content;
+			}
+		} @else {
+			@media (max-width: $breakpoint-max) {
+				@content;
+			}
+		}
+	} @else {
+		@if $direction == min {
+			@media (min-width: $breakpoint) {
+				@content;
+			}
+		} @else {
+			@media (max-width: $breakpoint) {
+				@content;
+			}
+		}
+	}
+}

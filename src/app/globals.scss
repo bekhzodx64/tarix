@@ -1,0 +1,24 @@
+@import '../components/styles/reset';
+@import '../components/styles/variables';
+@import '../components/styles/breakpoints';
+@import '../components/styles/mixins';
+@import '../components/styles/container';
+
+@import '../components/styles/elements/index';
+@import '../components/styles/blocks/navigation';
+@import '../components/styles/blocks/banner';
+@import '../components/styles/blocks/section';
+@import '../components/styles/blocks/sidebar';
+@import '../components/styles/blocks/persons';
+@import '../components/styles/blocks/collections';
+
+.page {
+	width: 100%;
+	color: $white;
+	background-color: $bg;
+	overflow-x: hidden;
+	padding-bottom: 98px;
+
+	@include breakpoint(sm) {
+	}
+}
