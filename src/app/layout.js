@@ -1,6 +1,7 @@
 import { Montserrat } from 'next/font/google'
 
 import Navigation from '@/components/navigation'
+import Sidebar from '@/components/sidebar'
 
 import 'swiper/css'
 import './globals.scss'
@@ -16,8 +17,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='ru'>
 			<body className={`${montserrat.className} page`}>
-				{/* <Sidebar /> */}
-
+				<Sidebar />
 				<main>{children}</main>
 
 				<Navigation />

@@ -4,12 +4,18 @@
 	top: 0;
 	bottom: 0;
 	width: 120px;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	border-right: 1px solid $main;
 	padding: 42px 0;
+	background: $bg;
+	z-index: 10;
+
+	@include breakpoint(lg) {
+		display: flex;
+	}
 
 	&-buttons {
 		display: flex;

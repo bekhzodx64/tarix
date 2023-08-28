@@ -22,3 +22,9 @@
 	@include breakpoint(sm) {
 	}
 }
+
+main {
+	@include breakpoint(lg) {
+		padding-left: 125px;
+	}
+}
