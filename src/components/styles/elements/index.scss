@@ -22,6 +22,10 @@
 
 	p {
 		font-size: 12px;
+
+		@include breakpoint(md) {
+			font-size: 23px;
+		}
 	}
 
 	@include breakpoint(sm) {

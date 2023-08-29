@@ -1,0 +1,127 @@
+.biography {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding: 20px;
+
+	&-slider {
+		&__item {
+			aspect-ratio: 16/9;
+			max-height: 536px;
+			width: 100%;
+		}
+
+		&__info {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+
+			& > p {
+				background: $black;
+				max-width: max-content;
+				padding: 5px 10px;
+				border-radius: 100px;
+				@include truncate(1);
+
+				&:first-child {
+					font-size: 12px;
+
+					@include breakpoint(md) {
+						font-size: 18px;
+					}
+				}
+
+				&:last-child {
+					font-size: 10px;
+					font-weight: 600;
+
+					@include breakpoint(md) {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+
+		.first-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 4px;
+
+			grid-template-areas:
+				'first second third fourth'
+				'first second third fourth';
+
+			@include breakpoint(md) {
+				grid-template-areas:
+					'first first second third'
+					'first first fourth fourth';
+			}
+
+			& > div {
+				border-radius: 8px;
+				overflow: hidden;
+				position: relative;
+
+				& > img {
+					object-fit: cover;
+				}
+			}
+
+			.first {
+				grid-area: first;
+			}
+			.second {
+				grid-area: second;
+			}
+			.third {
+				grid-area: third;
+			}
+			.fourth {
+				grid-area: fourth;
+			}
+		}
+
+		.second-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 4px;
+			grid-template-areas:
+				'first second third fourth'
+				'first second third fourth';
+
+			@include breakpoint(md) {
+				grid-template-areas:
+					'first second third third'
+					'fourth fourth third third';
+			}
+
+			& > div {
+				border-radius: 8px;
+				overflow: hidden;
+				position: relative;
+
+				& > img {
+					object-fit: cover;
+				}
+			}
+
+			.first {
+				grid-area: first;
+			}
+			.second {
+				grid-area: second;
+			}
+			.third {
+				grid-area: third;
+			}
+			.fourth {
+				grid-area: fourth;
+			}
+		}
+	}
+}
